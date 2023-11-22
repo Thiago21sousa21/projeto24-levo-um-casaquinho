@@ -8,7 +8,7 @@ export function VisualSide() {
                     hoje ou proximo dia
                 </div>
                 <div className="NameAndLocation">
-                    <h1>Nome da cidade</h1>
+                    <h1>São Paulo</h1>
                     <p>coordenadas</p>
                 </div>
                 <div className="SiteInformation">
@@ -33,7 +33,7 @@ const CsVisualSide = styled.div`
         h1{
             color: #222;
             font-family: Poppins;
-            font-size: 60px;
+            font-size: 10vw;
             font-style: normal;
             font-weight: 400;
             //line-height: 48px; /* 32% */

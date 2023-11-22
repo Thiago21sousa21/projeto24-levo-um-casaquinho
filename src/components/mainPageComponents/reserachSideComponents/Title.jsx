@@ -14,13 +14,13 @@ const CsTitle = styled.div`
     display: flex;
     align-items: center;
     img{
-        width: 21.82%;
+        width: 22%;
         //height: 120px;
     }
     h1{
     color: #222;
     font-family: Poppins;
-    font-size: calc(15px + 1.9vw);
+    font-size: 3vw;
     font-weight: 600;
     //line-height: 48px;
     }
