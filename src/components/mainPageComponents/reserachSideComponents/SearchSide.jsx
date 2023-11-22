@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import {Title} from '../reserachSideComponents'
+import {Title, ResearchAndInformation} from './'
 
 export function ReserachSide (){
     return(
         <CsReseachSide>
             <div className="container">
                 <Title/>
+                <ResearchAndInformation/>
             </div>
         </CsReseachSide>
     )

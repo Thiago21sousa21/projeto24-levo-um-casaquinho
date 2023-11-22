@@ -1,10 +1,6 @@
 import styled from "styled-components"
-import 
-{
-  ReserachSide, 
-  VisualSide
-} 
-from '../components/mainPageComponents'
+import {VisualSide}from '../components/mainPageComponents/visualSideComponents'
+import {ReserachSide}from '../components/mainPageComponents/reserachSideComponents'
 
 
 function MainPage() {

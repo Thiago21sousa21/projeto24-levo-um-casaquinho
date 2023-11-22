@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import casaco from '../../assets/casaco.svg'
+import casaco from '../../../assets/casaco.svg'
 
 export function Title (){
     return(
@@ -20,7 +20,7 @@ const CsTitle = styled.div`
     h1{
     color: #222;
     font-family: Poppins;
-    font-size: 200%;
+    font-size: calc(15px + 1.9vw);
     font-weight: 600;
     //line-height: 48px;
     }
