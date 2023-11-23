@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export function VisualSide() {
+export function VisualSide(props) {
+    const {name, coord}= props;
     return (
         <CsVisualSide>
             <div className="container">
@@ -8,8 +9,8 @@ export function VisualSide() {
                     hoje ou proximo dia
                 </div>
                 <div className="NameAndLocation">
-                    <h1>São Paulo</h1>
-                    <p>coordenadas</p>
+                    <h1>{name}</h1>
+                    <p>{`Lat: ${coord.lat}  Long: ${coord.lon}`}</p>
                 </div>
                 <div className="SiteInformation">
                     todos os direitos reservado e blah
@@ -22,6 +23,8 @@ export function VisualSide() {
 const CsVisualSide = styled.div`
     width: 70%;
     border: 1px;
+    background-color: #EFEFEF;
+
 
     padding: 15px 20px 5px;
 
