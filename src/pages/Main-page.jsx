@@ -11,9 +11,9 @@ function MainPage() {
   const [weatherData, setWeatherData] = useState(undefined)
 
   useEffect(()=>{
-    axios.get('lugar nenhum')
+    axios.get(`${import.meta.env.VITE_BASE_URL}?q=teresina&appid=${import.meta.env.VITE_KEY}`)
       .then(r=>{
-
+        console.log(r.data)
       })
       .catch(e=>{
         Swal.fire({
