@@ -1,9 +1,18 @@
 import styled from "styled-components";
-import {InformationResearchSide, FormSearch} from '.'
+import 
+{
+    InformationResearchSide, 
+    FormSearch, 
+    Timestamp, 
+    ButtonsController
+} from './'
+import { useState } from "react";
 
 
 export function ResearchAndInformation(props) {
     const {setSearchCity, temp, icon, description}=props;
+    const [scale, setScale]= useState('CELSIUS')
+
 
     return (
         <CsResearchAndInformation>
@@ -14,8 +23,14 @@ export function ResearchAndInformation(props) {
                 temp={temp}
                 icon={icon}
                 description={description}
+                scale={scale}
             />
             <CsLine/>
+            <Timestamp/>
+            <ButtonsController
+                setScale={setScale}
+                //scale={scale}
+            />
 
         </CsResearchAndInformation>
     )
