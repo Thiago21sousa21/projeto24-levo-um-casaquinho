@@ -19,12 +19,13 @@ export function InformationResearchSide(props) {
 
 const CsInformationResearchSide = styled.div`
   text-align: center;
-  font-size: 5vw;
+  font-size: 7vw;
+  margin-bottom: 20px;
 
   p{
     color: #222;
     font-family: Poppins;
-    font-size: 32px;
+    font-size: 2vw;
     font-style: normal;
     font-weight: 400;
   }

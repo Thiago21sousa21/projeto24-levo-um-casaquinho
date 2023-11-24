@@ -23,7 +23,7 @@ export function ButtonsController(props){
             <Switch
                 checked={switchAtivo}
                 onChange={handleSwitchChange}
-
+                //onClick={handleSwitchChange}
             />
         </CsButtonsController>
     )

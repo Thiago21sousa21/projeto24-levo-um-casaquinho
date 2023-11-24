@@ -13,6 +13,7 @@ export function Title (){
 const CsTitle = styled.div`
     display: flex;
     align-items: center;
+    margin-bottom: 40px;
     img{
         width: 22%;
         //height: 120px;

@@ -12,7 +12,7 @@ function MainPage() {
   const [seachCity, setSearchCity] = useState('são paulo')
 
   useEffect(()=>{
-    axios.get(`${import.meta.env.VITE_BASE_URL}?q=${seachCity}&appid=${import.meta.env.VITE_KEY}`)
+    axios.get(`${import.meta.env.VITE_BASE_URL}?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
       .then(r=>{
         console.log(r.data)
         setWeatherData(r.data)
@@ -27,8 +27,8 @@ function MainPage() {
 
   if(!weatherData)return 'notFound'
 
-  const {name, coord, main, weather, dt} = weatherData;
-  const {temp, temp_max, temp_min} = main;
+  const {name, coord, main, weather, wind } = weatherData;
+  const {temp, temp_max, temp_min, humidity} = main;
   const {icon, description}=weather[0];
 
   return (
@@ -40,8 +40,10 @@ function MainPage() {
           description={description}
         />
         <VisualSide
+          main={main}
           name={name}
           coord={coord}
+          wind={wind}
         />
     </CsMainPage>
   )
@@ -49,7 +51,7 @@ function MainPage() {
 
 const CsMainPage = styled.div`
     //border: 3px solid red;
-    *{border: 1px solid black}
+    //*{border: 1px solid black}
 
     width: 100vw;
     height: 100vh;

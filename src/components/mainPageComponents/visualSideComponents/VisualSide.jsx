@@ -1,20 +1,21 @@
 import styled from "styled-components";
+import { FeaturesWeather, TodayOrNext, NameAndLocation } from "./";
 
 export function VisualSide(props) {
-    const {name, coord}= props;
+    const {name, coord, main, wind}= props;
     return (
         <CsVisualSide>
             <div className="container">
-                <div className="TodayOrNext">
-                    hoje ou proximo dia
-                </div>
-                <div className="NameAndLocation">
-                    <h1>{name}</h1>
-                    <p>{`Lat: ${coord.lat}  Long: ${coord.lon}`}</p>
-                </div>
-                <div className="SiteInformation">
-                    todos os direitos reservado e blah
-                </div>
+                <TodayOrNext/>
+                <NameAndLocation
+                    name={name}
+                    coord={coord}
+                />
+                <FeaturesWeather 
+                    main={main}
+                    wind={wind}
+                />
+                <div className="siteInformation">todos os direitos reservado e blah</div>
             </div>
         </CsVisualSide>
     )
@@ -31,23 +32,15 @@ const CsVisualSide = styled.div`
     .container{
         width: 100%;
         height: 100%;
-    }
-    .NameAndLocation{
-        h1{
-            color: #222;
-            font-family: Poppins;
-            font-size: 10vw;
-            font-style: normal;
-            font-weight: 400;
-            //line-height: 48px; /* 32% */
+        position: relative;
+
+        .siteInformation{
+
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
         }
-        p{
-            color: #222;
-            font-family: Poppins;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 400;
-            //line-height: 48px; /* 200% */
-        }
+
     }
+    
 `

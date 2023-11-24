@@ -40,6 +40,8 @@ const CsFormSearch = styled.form`
     background: #EDEDEF;
     box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08);
 
+    margin-bottom: 40px;
+
     display: flex;
     justify-content: space-between;
 

@@ -14,5 +14,7 @@ export  function Timestamp(){
 
 const CsTimestamp = styled.div`
     text-align: center;
+    margin-top: 40px;
+
 `
 

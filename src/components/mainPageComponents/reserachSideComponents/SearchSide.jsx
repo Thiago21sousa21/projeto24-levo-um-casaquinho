@@ -13,6 +13,8 @@ export function ReserachSide (props){
                     icon={icon}
                     description={description}
                 />
+                <div className="siteInformation">todos os direitos reservado e blah</div>
+
             </div>
         </CsReseachSide>
     )
@@ -27,5 +29,12 @@ const CsReseachSide = styled.div`
     .container{
         width: 100%;
         height: 100%;
+        position: relative;
+        .siteInformation{
+
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+        }
     }
 `
