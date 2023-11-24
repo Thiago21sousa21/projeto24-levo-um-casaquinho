@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FeaturesWeather, TodayOrNext, NameAndLocation } from "./";
 
 export function VisualSide(props) {
-    const {name, coord, main, wind}= props;
+    const {name, coord, main, wind, scale}= props;
     return (
         <CsVisualSide>
             <div className="container">
@@ -11,7 +11,8 @@ export function VisualSide(props) {
                     name={name}
                     coord={coord}
                 />
-                <FeaturesWeather 
+                <FeaturesWeather
+                    scale={scale} 
                     main={main}
                     wind={wind}
                 />

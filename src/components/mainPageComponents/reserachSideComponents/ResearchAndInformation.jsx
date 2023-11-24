@@ -6,12 +6,9 @@ import
     Timestamp, 
     ButtonsController
 } from './'
-import { useState } from "react";
-
 
 export function ResearchAndInformation(props) {
-    const {setSearchCity, temp, icon, description}=props;
-    const [scale, setScale]= useState('CELSIUS')
+    const {setSearchCity, temp, icon, description, scale, setScale}=props;
 
 
     return (

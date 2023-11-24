@@ -2,12 +2,14 @@ import styled from "styled-components";
 import {Title, ResearchAndInformation} from './'
 
 export function ReserachSide (props){
-    const {setSearchCity, temp, icon, description}=props;
+    const {setSearchCity, temp, icon, description, setScale, scale}=props;
     return(
         <CsReseachSide>
             <div className="container">
                 <Title/>
                 <ResearchAndInformation
+                    scale={scale}
+                    setScale={setScale}
                     setSearchCity={setSearchCity}
                     temp={temp}
                     icon={icon}

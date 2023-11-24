@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
 function MainPage() {
   const [weatherData, setWeatherData] = useState(undefined)
   const [seachCity, setSearchCity] = useState('são paulo')
+  const [scale, setScale]= useState('CELSIUS')
+
 
   useEffect(()=>{
     axios.get(`${import.meta.env.VITE_BASE_URL}?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
@@ -34,12 +36,15 @@ function MainPage() {
   return (
     <CsMainPage>
         <ReserachSide
+          scale={scale}
+          setScale={setScale}
           setSearchCity={setSearchCity}
           temp={temp}
           icon={icon}
           description={description}
         />
         <VisualSide
+          scale={scale}
           main={main}
           name={name}
           coord={coord}
