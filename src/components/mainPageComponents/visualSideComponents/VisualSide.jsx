@@ -1,22 +1,31 @@
 import styled from "styled-components";
-import { FeaturesWeather, TodayOrNext, NameAndLocation } from "./";
+import { FeaturesWeather, TodayOrNext, NameAndLocation, NextDays } from "./";
+import { useState } from "react";
 
 export function VisualSide(props) {
     const {name, coord, main, wind, scale}= props;
+    const [toggleMap, setToggleMap] = useState(true)
     return (
         <CsVisualSide>
             <div className="container">
-                <TodayOrNext/>
+                <TodayOrNext setToggleMap={setToggleMap} />
                 <NameAndLocation
                     name={name}
                     coord={coord}
                 />
-                <FeaturesWeather
-                    scale={scale} 
-                    main={main}
-                    wind={wind}
-                />
-                <div className="siteInformation">todos os direitos reservado e blah</div>
+
+                {
+                    toggleMap ?
+                        <FeaturesWeather
+                            scale={scale} 
+                            main={main}
+                            wind={wind}
+                        /> :
+                        <NextDays/>
+                }
+                
+
+                <div className="siteInformation">Dados fornecidos pela Open Weather API</div>
             </div>
         </CsVisualSide>
     )

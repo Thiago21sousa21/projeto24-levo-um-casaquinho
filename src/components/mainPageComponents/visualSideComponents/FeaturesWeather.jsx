@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export function FeaturesWeather(props) {
     const { wind, scale, main } = props;
-    const { humidity, temp_min, temp_max } = main;
-
+    const { humidity, temp_min, temp_max, temp } = main;
+    const temSuggestion = 290.15
+    
     return (
         <CsFeaturesWeather>
             <div className=" box min">
@@ -27,8 +28,19 @@ export function FeaturesWeather(props) {
                 {humidity}%</div>
             <div className=" box speed">
                 <p>Velocidade do vento</p>
-                {wind.speed}m/s</div>
-            <p>Não, você não deve levar um casaquinho!</p>
+                {wind.speed}m/s
+            </div>
+            {
+                temp_max < temSuggestion ||
+                temp_min < temSuggestion ||
+                temp < temSuggestion
+                ?
+                    <p>Sim, você deve levar um casaquinho!</p>
+
+                :
+                    <p>Não, você não deve levar um casaquinho!</p>
+            }
+           
         </CsFeaturesWeather>
     );
 }

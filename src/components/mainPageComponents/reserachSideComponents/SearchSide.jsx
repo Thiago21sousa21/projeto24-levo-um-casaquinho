@@ -15,7 +15,7 @@ export function ReserachSide (props){
                     icon={icon}
                     description={description}
                 />
-                <div className="siteInformation">todos os direitos reservado e blah</div>
+                <div className="siteInformation">Todos os direitos reservados. 2023.</div>
 
             </div>
         </CsReseachSide>
