@@ -20,7 +20,9 @@ export function FormSearch(props) {
         <CsFormSearch
             onSubmit={sendData}
         >
-            <button className="buttonForm">Lupinha</button>
+            <button className="buttonForm">
+            <ion-icon name="search-outline"></ion-icon>
+            </button>
             <input 
                 type="text" 
                 placeholder="Bota a cidade ai"
@@ -46,7 +48,7 @@ const CsFormSearch = styled.form`
     justify-content: space-between;
 
     input{
-        width: 80%;
+        width: 90%;
         border-radius: 24px;
         background-color: #EDEDEF;
     }

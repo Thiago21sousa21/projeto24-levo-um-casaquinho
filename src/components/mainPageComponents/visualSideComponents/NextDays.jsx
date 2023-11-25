@@ -14,7 +14,6 @@ export  function NextDays({mapData, scale}){
             const temp = list[i].main.temp ;
             const day = dayjs(list[i].dt_txt).format('DD/MM (ddd)');
             const celsius = parseInt(temp - 273.15);
-            console.log(celsius)
             const fahrenheit = parseInt(temp * 1.8 - 459.67);
 
             celList.push({day, temp: celsius});
@@ -26,13 +25,16 @@ export  function NextDays({mapData, scale}){
     return(
         <CsNextDays>
             <LineChart
-                width={600} 
+                width={600}
                 height={300}
                 data={scale === 'CELSIUS' ? celList : fahList}
             >
                 <Line type="monotone" dataKey="temp" stroke="#8884d8"/>
                 <XAxis dataKey="day" />
-                <YAxis dataKey="temp"/>
+                <YAxis 
+                    dataKey="temp"
+                    tickFormatter={(v)=>`${v}°${scale === 'CELSIUS' ? 'C' : 'F'}`}
+                />
             </LineChart>
         </CsNextDays>
     )
@@ -42,6 +44,7 @@ const CsNextDays = styled.div`
     width: 60vw;
     height: 24.63vw;
     //background-color: red;
+    border: 1px solid;
 
     margin-top: 30px;
 `
