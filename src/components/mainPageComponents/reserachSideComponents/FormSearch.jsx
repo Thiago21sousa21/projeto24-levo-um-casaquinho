@@ -23,9 +23,9 @@ export function FormSearch(props) {
             <button className="buttonForm">
             <ion-icon name="search-outline"></ion-icon>
             </button>
-            <input 
+            <CsInput 
                 type="text" 
-                placeholder="Bota a cidade ai"
+                placeholder="Procure por uma cidade"
                 id='city'
                 value={form['city']}
                 onChange={updateValuesForm}
@@ -37,7 +37,7 @@ export function FormSearch(props) {
 
 const CsFormSearch = styled.form`
     width: 100%;
-    height: 30px;
+    height: 40px;
     border-radius: 24px;
     background: #EDEDEF;
     box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08);
@@ -45,19 +45,22 @@ const CsFormSearch = styled.form`
     margin-bottom: 40px;
 
     display: flex;
-    justify-content: space-between;
-
-    input{
-        width: 90%;
-        border-radius: 24px;
-        background-color: #EDEDEF;
-    }
+    padding-left: 20px;
     
     .buttonForm{
-        border: 1px solid red;
+        border: none;
         height: 100%;
         border-radius: 24px;
-        border: none;
         background-color: #EDEDEF;
+        cursor: pointer;
     }
+`
+
+const CsInput = styled.input`
+    width: 90%;
+    border-radius: 24px;
+    background-color: #EDEDEF;
+    border: #EDEDEF;
+    outline: 0;
+
 `
