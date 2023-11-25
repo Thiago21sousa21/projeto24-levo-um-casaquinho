@@ -7,7 +7,7 @@ dayjs.locale('pt-br')
 
 
 export  function NextDays({mapData, scale}){
-   console.log(mapData.list)
+   //console.log(mapData.list)
    const celList = []
    const fahList = []
    
@@ -29,6 +29,7 @@ export  function NextDays({mapData, scale}){
             <LineChart
                 width={600}
                 height={300}
+                className="mapa"
                 data={scale === 'CELSIUS' ? celList : fahList}
             >
                 <Line type="monotone" dataKey="temp" stroke="#8884d8"/>
@@ -43,10 +44,8 @@ export  function NextDays({mapData, scale}){
 }
 
 const CsNextDays = styled.div`
-    width: 60vw;
-    height: 24.63vw;
-    //background-color: red;
-    border: 1px solid;
-
+    width: 60%;
+    height: 24.63%;
     margin-top: 30px;
+
 `

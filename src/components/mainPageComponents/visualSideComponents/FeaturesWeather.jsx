@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export function FeaturesWeather(props) {
-    const { wind, scale, main } = props;
+    const { wind, scale, main, darkOptions:{darkMode} } = props;
     const { humidity, temp_min, temp_max, temp } = main;
     const temSuggestion = 290.15
     
     return (
-        <CsFeaturesWeather>
+        <CsFeaturesWeather
+            $darkMode={darkMode}
+        >
             <div className=" box min">
                 <p>Mínima</p>
                 {
@@ -50,6 +52,11 @@ const CsFeaturesWeather = styled.div`
     flex-wrap: wrap;
     width: 66.5vw;
     padding-top: 3vw;
+
+    p{
+        color: ${p=> p.$darkMode ? '#fff' : '#222'};
+    }
+
     .box{
         width: 23vw;
         height: 8vw;
@@ -67,7 +74,7 @@ const CsFeaturesWeather = styled.div`
 
         p{
             color: #fff;
-        font-size: 1.5vw;
+            font-size: 1.5vw;
         }
     }
 `

@@ -8,7 +8,7 @@ import
 } from './'
 
 export function ResearchAndInformation(props) {
-    const {setSearchCity, temp, icon, description, scale, setScale, weatherMain}=props;
+    const {setSearchCity, temp, icon, description, scale, setScale, weatherMain, darkOptions}=props;
 
 
     return (
@@ -24,10 +24,13 @@ export function ResearchAndInformation(props) {
                 weatherMain={weatherMain}
             />
             <CsLine/>
-            <Timestamp/>
+            <Timestamp
+                darkOptions={darkOptions}
+            />
             <ButtonsController
                 setScale={setScale}
                 //scale={scale}
+                darkOptions={darkOptions}
             />
 
         </CsResearchAndInformation>

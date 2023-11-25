@@ -12,12 +12,14 @@ function MainPage() {
   const [mapData, setMapData] = useState(undefined)
   const [seachCity, setSearchCity] = useState('são paulo')
   const [scale, setScale]= useState('CELSIUS')
+  const [darkMode, setDarkMode] = useState(false);
+  const darkOptions = {darkMode, setDarkMode}
 
 
   useEffect(()=>{
     axios.get(`${import.meta.env.VITE_BASE_URL}/weather?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
       .then(r=>{
-        console.log(r.data)
+        //console.log(r.data)
         setWeatherData(r.data)
       })
       .catch(e=>{
@@ -39,7 +41,7 @@ function MainPage() {
       })
   },[seachCity])
 
-  if(!weatherData)return 'notFound'
+  if(!weatherData || !mapData)return 'A APLICAÇÃO NÃO ESTA FUNCIONANDO NO MOMENTO'
 
   const {name, coord, main, weather, wind } = weatherData;
   const {temp, temp_max, temp_min, humidity} = main;
@@ -55,6 +57,7 @@ function MainPage() {
           icon={icon}
           description={description}
           weatherMain = {weather[0].main}
+          darkOptions={darkOptions}
         />
         <VisualSide
           mapData={mapData}
@@ -63,6 +66,7 @@ function MainPage() {
           name={name}
           coord={coord}
           wind={wind}
+          darkOptions={darkOptions}
         />
     </CsMainPage>
   )

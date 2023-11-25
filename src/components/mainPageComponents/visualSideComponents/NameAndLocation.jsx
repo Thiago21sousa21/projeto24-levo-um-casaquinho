@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export function NameAndLocation(props){
-    const {name, coord}= props;
+    const {name, coord, darkOptions:{darkMode}}= props;
     return(
-        <CsNameAndLocation>
+        <CsNameAndLocation
+            $darkMode={darkMode}
+        >
             <h1>{name}</h1>
             <p>{`Lat: ${coord.lat}  Long: ${coord.lon}`}</p>
         </CsNameAndLocation>
@@ -11,8 +13,8 @@ export function NameAndLocation(props){
 }
 
 const CsNameAndLocation = styled.div`
+    color: ${p=> p.$darkMode ? '#fff' : '#222'};
     h1{
-        color: #222;
         font-family: Poppins;
         font-size: 7vw;
         //font-style: normal;
@@ -21,7 +23,6 @@ const CsNameAndLocation = styled.div`
                 
     }
     p{
-        color: #222;
         font-family: Poppins;
         font-size: 1vw;
         //font-style: normal;

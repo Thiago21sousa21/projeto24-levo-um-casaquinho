@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import casaco from '../../../assets/casaco.svg'
 
-export function Title (){
+export function Title ({darkOptions:{darkMode}}){
     return(
-        <CsTitle>
+        <CsTitle
+            $darkMode={darkMode}
+        >
             <img src={casaco} alt="" />
            <h1>Levo um casaquinho?</h1>
         </CsTitle>
@@ -11,6 +13,8 @@ export function Title (){
 }
 
 const CsTitle = styled.div`
+    color: ${p => p.$darkMode ? '#ffffff' : '#222' };  
+
     display: flex;
     align-items: center;
     margin-bottom: 40px;
@@ -19,7 +23,6 @@ const CsTitle = styled.div`
         //height: 120px;
     }
     h1{
-    color: #222;
     font-family: Poppins;
     font-size: 3vw;
     font-weight: 600;

@@ -5,4 +5,5 @@ export * from './SearchSide'
 export * from './FormSearch'
 export * from  './Timestamp'
 export * from  './ButtonsController'
+export * from  './ButtonDark'
 
