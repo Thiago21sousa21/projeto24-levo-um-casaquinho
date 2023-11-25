@@ -3,7 +3,7 @@ import { FeaturesWeather, TodayOrNext, NameAndLocation, NextDays } from "./";
 import { useState } from "react";
 
 export function VisualSide(props) {
-    const {name, coord, main, wind, scale}= props;
+    const {name, coord, main, wind, scale, mapData}= props;
     const [toggleMap, setToggleMap] = useState(true)
     return (
         <CsVisualSide>
@@ -21,7 +21,10 @@ export function VisualSide(props) {
                             main={main}
                             wind={wind}
                         /> :
-                        <NextDays/>
+                        <NextDays 
+                            scale={scale}
+                            mapData={mapData}
+                        />
                 }
                 
 

@@ -9,15 +9,27 @@ import Swal from 'sweetalert2';
 
 function MainPage() {
   const [weatherData, setWeatherData] = useState(undefined)
+  const [mapData, setMapData] = useState(undefined)
   const [seachCity, setSearchCity] = useState('são paulo')
   const [scale, setScale]= useState('CELSIUS')
 
 
   useEffect(()=>{
-    axios.get(`${import.meta.env.VITE_BASE_URL}?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
+    axios.get(`${import.meta.env.VITE_BASE_URL}/weather?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
       .then(r=>{
-        console.log(r.data)
+        //console.log(r.data)
         setWeatherData(r.data)
+      })
+      .catch(e=>{
+        Swal.fire({
+          title: "Ooops!",
+          text: "Something went wrong... 😢"
+        })
+      })
+      axios.get(`${import.meta.env.VITE_BASE_URL}/forecast?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
+      .then(r=>{
+        //console.log(r.data)
+        setMapData(r.data)
       })
       .catch(e=>{
         Swal.fire({
@@ -44,6 +56,7 @@ function MainPage() {
           description={description}
         />
         <VisualSide
+          mapData={mapData}
           scale={scale}
           main={main}
           name={name}
