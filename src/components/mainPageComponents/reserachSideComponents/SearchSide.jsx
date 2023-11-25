@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {Title, ResearchAndInformation} from './'
 
 export function ReserachSide (props){
-    const {setSearchCity, temp, icon, description, setScale, scale}=props;
+    const {setSearchCity, temp, icon, description, setScale, scale, weatherMain}=props;
     return(
         <CsReseachSide>
             <div className="container">
@@ -14,6 +14,7 @@ export function ReserachSide (props){
                     temp={temp}
                     icon={icon}
                     description={description}
+                    weatherMain={weatherMain}
                 />
                 <div className="siteInformation">Todos os direitos reservados. 2023.</div>
 

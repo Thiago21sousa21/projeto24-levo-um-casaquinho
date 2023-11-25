@@ -22,7 +22,8 @@ export function TodayOrNext({setToggleMap}){
 
 const CsTodayOrNext = styled.div`
     display: flex;
-    
+    margin-bottom: 30px;
+
     .option{
         z-index: 10;
         font-size: 3vw;

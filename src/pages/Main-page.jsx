@@ -17,7 +17,7 @@ function MainPage() {
   useEffect(()=>{
     axios.get(`${import.meta.env.VITE_BASE_URL}/weather?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
       .then(r=>{
-        //console.log(r.data)
+        console.log(r.data)
         setWeatherData(r.data)
       })
       .catch(e=>{
@@ -54,6 +54,7 @@ function MainPage() {
           temp={temp}
           icon={icon}
           description={description}
+          weatherMain = {weather[0].main}
         />
         <VisualSide
           mapData={mapData}
