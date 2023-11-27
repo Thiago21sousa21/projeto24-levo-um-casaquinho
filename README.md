@@ -14,6 +14,6 @@ O Weather App é uma aplicação que fornece informações meteorológicas de um
 `npm install`
 `npm run dev`
 
-#deploy:
+# deploy:
 https://projeto24-levo-um-casaquinho.vercel.app/
 
