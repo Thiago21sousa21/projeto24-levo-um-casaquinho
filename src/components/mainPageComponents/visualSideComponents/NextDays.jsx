@@ -47,5 +47,6 @@ const CsNextDays = styled.div`
     width: 60%;
     height: 24.63%;
     margin-top: 30px;
+    margin-bottom: 40px;
 
 `

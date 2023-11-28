@@ -52,6 +52,8 @@ const CsFeaturesWeather = styled.div`
     flex-wrap: wrap;
     width: 66.5vw;
     padding-top: 3vw;
+    margin-bottom: 40px;
+
 
     p{
         color: ${p=> p.$darkMode ? '#fff' : '#222'};

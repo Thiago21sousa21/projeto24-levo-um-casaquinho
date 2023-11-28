@@ -74,12 +74,16 @@ function MainPage() {
 
 const CsMainPage = styled.div`
     //border: 3px solid red;
-    //*{border: 1px solid black}
-
+    
     width: 100vw;
     height: 100vh;
-
+    
     display: flex;
+    
+    @media (max-width: 991px) {
+     // *{border: 1px solid black}
+      flex-direction: column;
+    }
 
 `
 

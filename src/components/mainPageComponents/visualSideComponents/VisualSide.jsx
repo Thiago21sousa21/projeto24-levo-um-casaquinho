@@ -66,6 +66,18 @@ const CsVisualSide = styled.div`
             bottom: 0%;
         }
 
+        @media (max-width: 991px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    }
+    }
+
+    @media (max-width: 991px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
 `

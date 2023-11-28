@@ -50,4 +50,9 @@ const CsReseachSide = styled.div`
             bottom: 0%;
         }
     }
+
+    @media (max-width: 991px) {
+        width: 100%;
+        //border: 1px solid red
+    }
 `
