@@ -54,6 +54,16 @@ const CsFeaturesWeather = styled.div`
     padding-top: 3vw;
     margin-bottom: 40px;
 
+    /* border: 1px solid;
+    *{
+    border: 1px solid;
+    } */
+
+    @media (max-width: 991px){
+        justify-content: space-between;
+        width: 55vw;
+    }
+    
 
     p{
         color: ${p=> p.$darkMode ? '#fff' : '#222'};
@@ -77,6 +87,10 @@ const CsFeaturesWeather = styled.div`
         p{
             color: #fff;
             font-size: 1.5vw;
+        }
+
+        @media (max-width: 991px){
+            margin: 0 0 3vw 0;
         }
     }
 `

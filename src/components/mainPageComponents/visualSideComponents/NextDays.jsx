@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { LineChart, Line, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import dayjs from "dayjs";
 import 'dayjs/locale/pt-br';
 
@@ -26,9 +26,10 @@ export  function NextDays({mapData, scale}){
 
     return(
         <CsNextDays>
+            <ResponsiveContainer width='100%' height='100%'>
             <LineChart
-                width={600}
-                height={300}
+                //width={600}
+                //height={300}
                 className="mapa"
                 data={scale === 'CELSIUS' ? celList : fahList}
             >
@@ -39,14 +40,21 @@ export  function NextDays({mapData, scale}){
                     tickFormatter={(v)=>`${v}°${scale === 'CELSIUS' ? 'C' : 'F'}`}
                 />
             </LineChart>
+            </ResponsiveContainer>
         </CsNextDays>
     )
 }
 
 const CsNextDays = styled.div`
+    
+
     width: 60%;
     height: 24.63%;
     margin-top: 30px;
     margin-bottom: 40px;
 
+    @media (max-width: 991px) {
+    height: 35vh;
+        
+    }
 `
