@@ -3,7 +3,16 @@ import { FeaturesWeather, TodayOrNext, NameAndLocation, NextDays } from "./";
 import { useState } from "react";
 
 export function VisualSide(props) {
-    const {name, coord, main, wind, scale, mapData, darkOptions}= props;
+    const {
+        name, 
+        coord, 
+        main, 
+        wind, 
+        scale, 
+        mapData, 
+        darkOptions, 
+        haveData
+    }= props;
     const [toggleMap, setToggleMap] = useState(true)
     const darkMode = darkOptions.darkMode;
 
@@ -18,13 +27,21 @@ export function VisualSide(props) {
                     toggleMap={toggleMap}
                     darkOptions={darkOptions}
                  />
-                <NameAndLocation
-                    name={name}
-                    coord={coord}
-                    darkOptions={darkOptions}
-                />
+
+                 {
+                    !haveData ? 
+                        '' : 
+                        <NameAndLocation
+                            name={name}
+                            coord={coord}
+                            darkOptions={darkOptions}
+                        />
+                 }
+                
 
                 {
+                    !haveData ? 
+                    '' : 
                     toggleMap ?
                         <FeaturesWeather
                             scale={scale} 

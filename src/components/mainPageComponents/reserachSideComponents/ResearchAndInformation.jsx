@@ -8,7 +8,17 @@ import
 } from './'
 
 export function ResearchAndInformation(props) {
-    const {setSearchCity, temp, icon, description, scale, setScale, weatherMain, darkOptions}=props;
+    const {
+        setSearchCity, 
+        temp, 
+        icon, 
+        description, 
+        scale, 
+        setScale, 
+        weatherMain, 
+        darkOptions,
+        haveData
+    }=props;
 
 
     return (
@@ -16,13 +26,18 @@ export function ResearchAndInformation(props) {
             <FormSearch
                 setSearchCity={setSearchCity}
             />
-            <InformationResearchSide
-                temp={temp}
-                icon={icon}
-                description={description}
-                scale={scale}
-                weatherMain={weatherMain}
-            />
+            {
+                haveData ?
+                    <InformationResearchSide
+                        temp={temp}
+                        icon={icon}
+                        description={description}
+                        scale={scale}
+                        weatherMain={weatherMain}
+                    />    : 
+                    ''    
+            }
+            
             <CsLine/>
             <Timestamp
                 darkOptions={darkOptions}

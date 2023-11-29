@@ -14,6 +14,7 @@ function MainPage() {
   const [scale, setScale]= useState('CELSIUS')
   const [darkMode, setDarkMode] = useState(false);
   const darkOptions = {darkMode, setDarkMode}
+  const [haveData, setHaveData] = useState(false);
 
 
   useEffect(()=>{
@@ -21,17 +22,13 @@ function MainPage() {
       .then(r=>{
         //console.log(r.data)
         setWeatherData(r.data)
-      })
-      .catch(e=>{
-        Swal.fire({
-          title: "Ooops!",
-          text: "Something went wrong... 😢"
-        })
-      })
-      axios.get(`${import.meta.env.VITE_BASE_URL}/forecast?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
+        return axios.get(`${import.meta.env.VITE_BASE_URL}/forecast?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
+      })  
       .then(r=>{
         //console.log(r.data)
         setMapData(r.data)
+        setHaveData(true);
+
       })
       .catch(e=>{
         Swal.fire({
@@ -41,11 +38,9 @@ function MainPage() {
       })
   },[seachCity])
 
-  if(!weatherData || !mapData)return 'A APLICAÇÃO NÃO ESTA FUNCIONANDO NO MOMENTO'
-
-  const {name, coord, main, weather, wind } = weatherData;
-  const {temp, temp_max, temp_min, humidity} = main;
-  const {icon, description}=weather[0];
+  const {name, coord, main = {}, weather = [], wind } = weatherData ?? {};
+  const {temp} = main ?? {};
+  const {icon, description}=weather[0] ?? {} ;
 
   return (
     <CsMainPage>
@@ -56,8 +51,9 @@ function MainPage() {
           temp={temp}
           icon={icon}
           description={description}
-          weatherMain = {weather[0].main}
+          weatherMain = {weather[0] && weather[0].main}
           darkOptions={darkOptions}
+          haveData={haveData}
         />
         <VisualSide
           mapData={mapData}
@@ -67,6 +63,7 @@ function MainPage() {
           coord={coord}
           wind={wind}
           darkOptions={darkOptions}
+          haveData={haveData}
         />
     </CsMainPage>
   )
