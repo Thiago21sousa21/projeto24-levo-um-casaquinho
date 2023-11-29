@@ -32,17 +32,16 @@ export function FeaturesWeather(props) {
                 <p>Velocidade do vento</p>
                 {wind.speed}m/s
             </div>
-            {
-                temp_max < temSuggestion ||
-                temp_min < temSuggestion ||
-                temp < temSuggestion
-                ?
-                    <p>Sim, você deve levar um casaquinho!</p>
+                {
+                    temp_max < temSuggestion ||
+                    temp_min < temSuggestion ||
+                    temp < temSuggestion
+                    ?
+                        <p>Sim, você deve levar um casaquinho!</p>
 
-                :
-                    <p>Não, você não deve levar um casaquinho!</p>
-            }
-           
+                    :
+                        <p>Não, você não deve levar um casaquinho!</p>
+                }           
         </CsFeaturesWeather>
     );
 }

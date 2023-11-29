@@ -43,6 +43,7 @@ const CsButtonsController = styled.div`
     .molde{
         display: flex;
         align-items: center;
+        margin-bottom: 10px;
 
         p{  
             margin-left: 20px;
