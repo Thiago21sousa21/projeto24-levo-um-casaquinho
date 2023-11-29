@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import 
-{
+import {
     InformationResearchSide, 
     FormSearch, 
     Timestamp, 
     ButtonsController
 } from './'
+import { Oval } from  'react-loader-spinner'
+
 
 export function ResearchAndInformation(props) {
     const {
@@ -17,7 +18,8 @@ export function ResearchAndInformation(props) {
         setScale, 
         weatherMain, 
         darkOptions,
-        haveData
+        haveData,
+        setHaveData
     }=props;
 
 
@@ -25,17 +27,20 @@ export function ResearchAndInformation(props) {
         <CsResearchAndInformation>
             <FormSearch
                 setSearchCity={setSearchCity}
+                setHaveData={setHaveData}
             />
             {
-                haveData ?
-                    <InformationResearchSide
-                        temp={temp}
-                        icon={icon}
-                        description={description}
-                        scale={scale}
-                        weatherMain={weatherMain}
-                    />    : 
-                    ''    
+                haveData==='NOT_HAS_DATA' ?
+                    '' :
+                    haveData==='LOADING_DATA' ?
+                        <Oval/> :
+                            <InformationResearchSide
+                                temp={temp}
+                                icon={icon}
+                                description={description}
+                                scale={scale}
+                                weatherMain={weatherMain}
+                            />   
             }
             
             <CsLine/>

@@ -5,7 +5,7 @@ export function ReserachSide (props){
     const {setSearchCity, temp, 
         icon, description, setScale, 
         scale, weatherMain, darkOptions,
-        haveData
+        haveData, setHaveData
     }=props;
     const darkMode = darkOptions.darkMode;
     return(
@@ -26,6 +26,7 @@ export function ReserachSide (props){
                     weatherMain={weatherMain}
                     darkOptions={darkOptions}
                     haveData={haveData}
+                    setHaveData={setHaveData}
                 />
                 <div className="siteInformation">Todos os direitos reservados. 2023.</div>
 

@@ -10,32 +10,37 @@ import Swal from 'sweetalert2';
 function MainPage() {
   const [weatherData, setWeatherData] = useState(undefined)
   const [mapData, setMapData] = useState(undefined)
-  const [seachCity, setSearchCity] = useState('são paulo')
+  const [seachCity, setSearchCity] = useState(undefined)
   const [scale, setScale]= useState('CELSIUS')
   const [darkMode, setDarkMode] = useState(false);
   const darkOptions = {darkMode, setDarkMode}
-  const [haveData, setHaveData] = useState(false);
+  const [haveData, setHaveData] = useState('NOT_HAS_DATA');
 
 
   useEffect(()=>{
-    axios.get(`${import.meta.env.VITE_BASE_URL}/weather?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
+    if(!(seachCity===undefined)){
+      
+      axios.get(`${import.meta.env.VITE_BASE_URL}/weather?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
       .then(r=>{
-        //console.log(r.data)
+        console.log(r.data)
         setWeatherData(r.data)
         return axios.get(`${import.meta.env.VITE_BASE_URL}/forecast?q=${seachCity}&lang=pt_br&appid=${import.meta.env.VITE_KEY}`)
       })  
-      .then(r=>{
-        //console.log(r.data)
-        setMapData(r.data)
-        setHaveData(true);
+        .then(r=>{
+          //console.log(r.data)
+          setMapData(r.data)
+          setHaveData('HAS_DATA');
 
-      })
-      .catch(e=>{
-        Swal.fire({
-          title: "Ooops!",
-          text: "Something went wrong... 😢"
         })
-      })
+        .catch(e=>{
+          setHaveData('HAS_DATA');
+          Swal.fire({
+            title: "Ooops!",
+            text: "Cidade não encontrada... 😢"
+          })
+        })
+    }
+    
   },[seachCity])
 
   const {name, coord, main = {}, weather = [], wind } = weatherData ?? {};
@@ -54,6 +59,7 @@ function MainPage() {
           weatherMain = {weather[0] && weather[0].main}
           darkOptions={darkOptions}
           haveData={haveData}
+          setHaveData={setHaveData}
         />
         <VisualSide
           mapData={mapData}

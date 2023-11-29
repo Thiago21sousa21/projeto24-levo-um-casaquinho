@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 export function FormSearch(props) {
-    const { setSearchCity } = props;
+    const { setSearchCity, setHaveData } = props;
 
     const [form, setForm] = useState({city:''})
     function updateValuesForm(e){
@@ -13,6 +13,7 @@ export function FormSearch(props) {
 
     function sendData(e){
         e.preventDefault();
+        setHaveData('LOADING_DATA')
         setSearchCity(form.city)
     }
 

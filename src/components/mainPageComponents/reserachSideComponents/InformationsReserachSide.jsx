@@ -57,7 +57,7 @@ const CsInformationResearchSide = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 7vw;
+  font-size: 6vw;
   margin-bottom: 20px;
   
   .molde{

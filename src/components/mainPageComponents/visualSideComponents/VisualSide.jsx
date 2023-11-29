@@ -29,7 +29,7 @@ export function VisualSide(props) {
                  />
 
                  {
-                    !haveData ? 
+                    !(haveData==='HAS_DATA') ? 
                         '' : 
                         <NameAndLocation
                             name={name}
@@ -40,7 +40,7 @@ export function VisualSide(props) {
                 
 
                 {
-                    !haveData ? 
+                    !(haveData==='HAS_DATA') ? 
                     '' : 
                     toggleMap ?
                         <FeaturesWeather
