@@ -2,10 +2,18 @@ import styled from "styled-components";
 import {Title, ResearchAndInformation} from './'
 
 export function ReserachSide (props){
-    const {setSearchCity, temp, 
-        icon, description, setScale, 
-        scale, weatherMain, darkOptions,
-        haveData, setHaveData
+    const {
+        setSearchCity, 
+        seachCity,
+        temp, 
+        icon, 
+        description, 
+        setScale, 
+        scale, 
+        weatherMain, 
+        darkOptions,
+        haveData, 
+        setHaveData
     }=props;
     const darkMode = darkOptions.darkMode;
     return(
@@ -20,6 +28,7 @@ export function ReserachSide (props){
                     scale={scale}
                     setScale={setScale}
                     setSearchCity={setSearchCity}
+                    seachCity={seachCity}
                     temp={temp}
                     icon={icon}
                     description={description}

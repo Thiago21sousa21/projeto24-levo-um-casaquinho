@@ -53,6 +53,7 @@ function MainPage() {
           scale={scale}
           setScale={setScale}
           setSearchCity={setSearchCity}
+          seachCity={seachCity}
           temp={temp}
           icon={icon}
           description={description}

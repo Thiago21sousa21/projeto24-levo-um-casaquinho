@@ -19,7 +19,8 @@ export function ResearchAndInformation(props) {
         weatherMain, 
         darkOptions,
         haveData,
-        setHaveData
+        setHaveData,
+        seachCity
     }=props;
 
 
@@ -28,6 +29,7 @@ export function ResearchAndInformation(props) {
             <FormSearch
                 setSearchCity={setSearchCity}
                 setHaveData={setHaveData}
+                seachCity={seachCity}
             />
             {
                 haveData==='NOT_HAS_DATA' ?
