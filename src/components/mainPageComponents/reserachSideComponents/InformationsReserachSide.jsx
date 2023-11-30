@@ -5,33 +5,24 @@ export function InformationResearchSide(props) {
   const { temp, icon, description, scale, weatherMain } = props;
 
   function choiceColor(weatherMain) {
-
     switch (weatherMain) {
       case 'Clear':
         return '#ffa500';
-
       case 'Clouds':
         return '#808080';
-
       case 'Rain':
         return '#0000ff';
-
       case 'Snow':
         return '#d3d3d3';
-
       case 'Thunderstorm':
         return '#993399';
-
       case 'Drizzle':
         return '#add8e6';
-
       case 'Mist':
         return '#d3d3d3';
-
       default:
         return '#000000';
-    }
-  }
+  }}
 
    const textColor = choiceColor(weatherMain);
 
