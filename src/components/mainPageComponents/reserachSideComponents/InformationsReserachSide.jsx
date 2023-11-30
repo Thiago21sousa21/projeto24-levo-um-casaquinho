@@ -40,11 +40,12 @@ export function InformationResearchSide(props) {
       style={{color:textColor }}
     >
       <div className="molde">
-        <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+        {temp && <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />}
         {
+          temp &&(
           scale === 'CELSIUS' ?
             `${parseInt(temp - 273.15)} °C` :
-            `${parseInt(temp * 1.8 - 459.67)} °F`
+            `${parseInt(temp * 1.8 - 459.67)} °F`)
         }
       </div>
 

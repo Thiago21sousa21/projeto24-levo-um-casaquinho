@@ -29,15 +29,15 @@ export function VisualSide(props) {
                  />
 
                  {
+                    coord && (
                     !(haveData==='HAS_DATA') ? 
                         '' : 
                         <NameAndLocation
                             name={name}
                             coord={coord}
                             darkOptions={darkOptions}
-                        />
-                 }
-                
+                        />)
+                 }              
 
                 {
                     !(haveData==='HAS_DATA') ? 

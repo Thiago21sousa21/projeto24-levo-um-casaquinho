@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export function NameAndLocation(props){
-    const {name, coord, darkOptions:{darkMode}}= props;
+    const {name, coord ={}, darkOptions:{darkMode}}= props ?? {};
     return(
         <CsNameAndLocation
             $darkMode={darkMode}

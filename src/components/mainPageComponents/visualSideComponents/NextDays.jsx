@@ -22,7 +22,7 @@ export  function NextDays({mapData, scale}){
             fahList.push({day, temp: fahrenheit});
         }
     }
-    celsiusAndFahrenheirt(mapData.list)
+    mapData && celsiusAndFahrenheirt(mapData.list)
 
     return(
         <CsNextDays>

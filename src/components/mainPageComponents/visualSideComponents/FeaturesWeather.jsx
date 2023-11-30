@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export function FeaturesWeather(props) {
-    const { wind, scale, main, darkOptions:{darkMode} } = props;
+    const { wind={}, scale, main={}, darkOptions:{darkMode} } = props ?? {};
     const { humidity, temp_min, temp_max, temp } = main;
     const temSuggestion = 290.15
     
+    if(!temp)return ''
     return (
         <CsFeaturesWeather
             $darkMode={darkMode}
